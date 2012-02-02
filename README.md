@@ -10,7 +10,9 @@ curl_wrapper as the name says is a wraper for the curl command.
     config.url 'rubygems.org'
   end
   puts curl.body
-  
+```
+
+```ruby
   curl = CurlWrapper.new do |config|
     config.ntlm
     config.user 'username/password'
@@ -18,9 +20,7 @@ curl_wrapper as the name says is a wraper for the curl command.
     config.verbose
     config.url 'http://hard_to_automate.sharepoint.com/resource' 
   end
-```
   
-```ruby
   curl.run
   puts curl.error
 ```
@@ -61,7 +61,7 @@ curl_wrapper as the name says is a wraper for the curl command.
   puts curl.error
 ```
 
-## CurlWrapper just works so you can have fun and explore HTTP ##
+## CurlWrapper just works so you can have fun exploring HTTP ##
 lets just skip new and body and stil get what we want
 ```ruby
   puts CurlWrapper.url('rubygems.org')
