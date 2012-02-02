@@ -108,7 +108,7 @@ class CurlWrapperTest < MiniTest::Unit::TestCase
   
   def test_should_convert_to_array_to_work_with_puts
     expected_out = `curl --help`
-    assert_equal expected_out, CurlWrapper.help.to_a.first, "Should be returning it self"
+    assert_equal expected_out, CurlWrapper.help.to_ary.first, "Should be returning it self"
   end
   
   

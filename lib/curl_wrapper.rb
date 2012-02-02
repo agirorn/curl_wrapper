@@ -34,7 +34,7 @@ class CurlWrapper
     @stderr.collect(&:to_s).join('')
   end
   
-  def to_a
+  def to_ary
     [to_s]
   end
 end
