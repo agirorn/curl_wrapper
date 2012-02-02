@@ -33,5 +33,9 @@ class CurlWrapper
     run if @stdout.nil?
     @stderr.collect(&:to_s).join('')
   end
+  
+  def to_a
+    [to_s]
+  end
 end
 
