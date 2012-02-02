@@ -273,5 +273,34 @@ class CurlWrapperTest < MiniTest::Unit::TestCase
      assert_equal expected, curl.options, "Should have worked for #{expected} => '#{short_option[:description]}' and '#{long_option[:description]}'"
     end
     
+    
+    def test_known_long_curl_options_returns_self
+      KNOWN_LONG_CURL_OPTIONS.each do |long_option|
+        actual_return_value = nil
+        curl = CurlWrapperFack.new
+        if long_option[:param].nil?
+          actual_return_value = curl.send long_option[:method]
+        else
+          actual_return_value = curl.send long_option[:method], long_option[:param]
+        end
+        
+        assert_equal curl, actual_return_value, "Should be returning self to enable changing."
+      end
+    end
+    
+    def test_known_short_curl_options_returns_self
+      KNOWN_SHORT_CURL_OPTIONS.each do |short_option|
+        actual_return_value = nil
+        curl = CurlWrapperFack.new
+        if short_option[:param].nil?
+          actual_return_value = curl.send short_option[:method]
+        else
+          actual_return_value = curl.send short_option[:method], short_option[:param]
+        end
+        
+        assert_equal curl, actual_return_value, "Should be returning self to enable changing."
+      end
+    end
+    
   end
 end

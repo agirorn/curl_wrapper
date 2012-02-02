@@ -22,6 +22,7 @@ class CurlWrapper
       else
         @options = "#{@options} #{option}"
       end
+      self
     end
     
     def fail
