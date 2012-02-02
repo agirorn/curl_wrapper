@@ -40,5 +40,8 @@ class CurlWrapper
       append_option '-p'
     end
     
+    def verbose
+      append_option '--verbose'
+    end
   end
 end

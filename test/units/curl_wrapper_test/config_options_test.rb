@@ -2,7 +2,7 @@ require 'minitest/autorun'
 require 'minitest/pride'
 require 'curl_wrapper/config_options'
 
-class CurlWrapperTest
+class CurlWrapperTest < MiniTest::Unit::TestCase
   class ConfigOptionsTest < MiniTest::Unit::TestCase
     KNOWN_LONG_CURL_OPTIONS = [
       { :method => :anyauth,                 :option => '--anyauth',                                                         :description => %q[Pick "any" authentication method (H)]                       },
@@ -232,7 +232,7 @@ class CurlWrapperTest
       end
     end
     
-    def test_known_long_curl_options
+    def test_known_short_curl_options
       KNOWN_SHORT_CURL_OPTIONS.each do |short_option|
         curl = CurlWrapperFack.new
         if short_option[:param].nil?
