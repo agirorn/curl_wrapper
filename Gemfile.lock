@@ -1,0 +1,16 @@
+PATH
+  remote: .
+  specs:
+    curl_wrapper (0.0.1)
+
+GEM
+  remote: http://rubygems.org/
+  specs:
+    minitest (2.11.1)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  curl_wrapper!
+  minitest
