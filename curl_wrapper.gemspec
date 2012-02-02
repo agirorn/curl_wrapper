@@ -7,7 +7,7 @@ Gem::Specification.new do |s|
   s.version     = CurlWrapper::VERSION
   s.authors     = ["Ægir Örn Símonarson"]
   s.email       = ["agirorn@gmail.com"]
-  s.homepage    = ""
+  s.homepage    = "https://github.com/agirorn/curl_wrapper"
   s.summary     = %q{DSL wraper for the curl command.}
   s.description = %q{Makes it easy to take you curl hacking from bash to ruby}
   
