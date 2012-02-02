@@ -1,7 +1,7 @@
 curl_wrapper as the name says is a wraper for the curl command.
 
 ## install ##
-```bash
+```sh
   gem install curl_wrapper
 ```  
 ## use ##
