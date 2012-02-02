@@ -91,4 +91,20 @@ class CurlWrapperTest < MiniTest::Unit::TestCase
     assert_equal expected_out, CurlWrapper.help.out, "Should be returning it self"
   end
   
+  def test_body_should_be_aliast_to_out
+    expected_out = `curl --help`
+    assert_equal expected_out, CurlWrapper.help.body, "Should be returning it self"
+  end
+  
+  def test_to_s_should_be_aliast_to_out
+    expected_out = `curl --help`
+    assert_equal expected_out, CurlWrapper.help.to_s, "Should be returning it self"
+  end
+  
+  def test_skiping_out_should_just_work
+    expected_out = `curl --help`
+    assert_equal expected_out, "#{CurlWrapper.help}", "Should be returning it self"
+  end
+  
+  
 end

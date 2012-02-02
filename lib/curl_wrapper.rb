@@ -26,6 +26,8 @@ class CurlWrapper
     run if @stdout.nil?
     @stdout.collect(&:to_s).join('')
   end
+  alias :body :out
+  alias :to_s :out
   
   def err
     run if @stdout.nil?
