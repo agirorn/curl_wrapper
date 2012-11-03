@@ -10,11 +10,11 @@ class CurlWrapper
       end
       append_option option, args.first
     end
-    
+
     def options
       @options
     end
-    
+
     def append_option option, value = nil
       option = "#{option} '#{value}'" unless value.nil?
       if @options.nil?
@@ -24,23 +24,23 @@ class CurlWrapper
       end
       self
     end
-    
+
     def fail
       append_option '--fail'
     end
-    
+
     def http1_0
       append_option '--http1.0'
     end
-    
+
     def proxy1_0 value
       append_option '--proxy1.0', value
     end
-    
+
     def p
       append_option '-p'
     end
-    
+
     def verbose
       append_option '--verbose'
     end

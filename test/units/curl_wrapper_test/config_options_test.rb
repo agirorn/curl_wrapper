@@ -152,8 +152,8 @@ class CurlWrapperTest < MiniTest::Unit::TestCase
       { :method => :write_out,               :option => '--write-out',               :param => 'FORMAT',                     :description => %q[What to output after completion]                            },
       { :method => :xattr,                   :option => '--xattr',                                                           :description => %q[Store metadata in extended file attributes]                 },
     ]
-    
-    KNOWN_SHORT_CURL_OPTIONS = [                                                                                                                                                                    
+
+    KNOWN_SHORT_CURL_OPTIONS = [
       { :method => :a,   :option => '-a',                                       :description => %q[Append to target file when uploading (F/SFTP)]              },
       { :method => :E,   :option => '-E', :param => 'CERT[:PASSWD]',            :description => %q[Client certificate file and password (SSL)]                 },
       { :method => :K,   :option => '-K', :param => 'FILE',                     :description => %q[Specify which config file to read]                          },
@@ -212,11 +212,11 @@ class CurlWrapperTest < MiniTest::Unit::TestCase
       { :method => :w,   :option => '-w', :param => 'FORMAT',                   :description => %q[What to output after completion]                            },
       { :method => :q,   :option => '-q',                                       :description => %q[If used as the first parameter disables .curlrc]            },
     ]
-    
+
     class CurlWrapperFack
       include CurlWrapper::ConfigOptions
     end
-    
+
     def test_known_long_curl_options
       KNOWN_LONG_CURL_OPTIONS.each do |long_option|
         curl = CurlWrapperFack.new
@@ -231,7 +231,7 @@ class CurlWrapperTest < MiniTest::Unit::TestCase
         end
       end
     end
-    
+
     def test_known_short_curl_options
       KNOWN_SHORT_CURL_OPTIONS.each do |short_option|
         curl = CurlWrapperFack.new
@@ -246,13 +246,13 @@ class CurlWrapperTest < MiniTest::Unit::TestCase
         end
       end
     end
-    
+
     def test_combinde_options
      long_option = KNOWN_LONG_CURL_OPTIONS[30]
      short_option = KNOWN_SHORT_CURL_OPTIONS[9]
-     
+
      curl = CurlWrapperFack.new
-     
+
      if short_option[:param].nil?
        curl.send short_option[:method]
        expected_short = "#{short_option[:option]}"
@@ -260,7 +260,7 @@ class CurlWrapperTest < MiniTest::Unit::TestCase
        curl.send short_option[:method], short_option[:param]
        expected_short = "#{short_option[:option]} '#{short_option[:param]}'"
      end
-     
+
      if long_option[:param].nil?
        curl.send long_option[:method]
        expected_long = "#{long_option[:option]}"
@@ -269,11 +269,11 @@ class CurlWrapperTest < MiniTest::Unit::TestCase
        expected_long = "#{long_option[:option]} '#{long_option[:param]}'"
      end
      expected = [expected_short, expected_long].join(' ')
-     
+
      assert_equal expected, curl.options, "Should have worked for #{expected} => '#{short_option[:description]}' and '#{long_option[:description]}'"
     end
-    
-    
+
+
     def test_known_long_curl_options_returns_self
       KNOWN_LONG_CURL_OPTIONS.each do |long_option|
         actual_return_value = nil
@@ -283,11 +283,11 @@ class CurlWrapperTest < MiniTest::Unit::TestCase
         else
           actual_return_value = curl.send long_option[:method], long_option[:param]
         end
-        
+
         assert_equal curl, actual_return_value, "Should be returning self to enable changing."
       end
     end
-    
+
     def test_known_short_curl_options_returns_self
       KNOWN_SHORT_CURL_OPTIONS.each do |short_option|
         actual_return_value = nil
@@ -297,10 +297,10 @@ class CurlWrapperTest < MiniTest::Unit::TestCase
         else
           actual_return_value = curl.send short_option[:method], short_option[:param]
         end
-        
+
         assert_equal curl, actual_return_value, "Should be returning self to enable changing."
       end
     end
-    
+
   end
 end

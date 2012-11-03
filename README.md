@@ -3,7 +3,7 @@ curl_wrapper as the name says is a wraper for the curl command.
 ## install ##
 ```sh
   gem install curl_wrapper
-```  
+```
 ## use ##
 
 ```ruby
@@ -19,9 +19,9 @@ curl_wrapper as the name says is a wraper for the curl command.
     config.user 'username/password'
     config.request 'POST'
     config.verbose
-    config.url 'http://hard_to_automate.sharepoint.com/resource' 
+    config.url 'http://hard_to_automate.sharepoint.com/resource'
   end
-  
+
   curl.run
   puts curl.error
 ```
@@ -38,9 +38,9 @@ curl_wrapper as the name says is a wraper for the curl command.
     config.user 'username/password'
     config.request 'POST'
   end
-  
-  curl.verbose.url 'http://hard_to_automate.sharepoint.com/resource' 
-  
+
+  curl.verbose.url 'http://hard_to_automate.sharepoint.com/resource'
+
   puts curl.run.error
 ```
 
@@ -56,9 +56,9 @@ curl_wrapper as the name says is a wraper for the curl command.
     config.user 'username/password'
     config.request 'POST'
   end
-  
-  curl.verbose.url 'http://hard_to_automate.sharepoint.com/resource' 
-  
+
+  curl.verbose.url 'http://hard_to_automate.sharepoint.com/resource'
+
   puts curl.error
 ```
 
@@ -74,6 +74,6 @@ lets just skip new and body and stil get what we want
     config.user 'username/password'
     config.request 'POST'
   end.verbose.url( 'http://hard_to_automate.sharepoint.com/resource' )
-  
+
   puts curl
 ```
