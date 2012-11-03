@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    curl_wrapper (0.0.1)
+    curl_wrapper (0.0.2)
 
 GEM
   remote: http://rubygems.org/
