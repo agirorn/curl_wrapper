@@ -1,4 +1,8 @@
-curl_wrapper as the name says is a wraper for the curl command.
+[![Gem Version](https://badge.fury.io/rb/curl_wrapper.svg)](https://badge.fury.io/rb/curl_wrapper)
+
+#curl wrapper
+
+curl_wrapper is a ruby wraper for the curl command.
 
 ## install ##
 ```sh
